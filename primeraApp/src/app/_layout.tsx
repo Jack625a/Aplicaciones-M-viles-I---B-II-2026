@@ -1,0 +1,75 @@
+import {Tabs} from 'expo-router'; //Enrutamiento dinamico
+import {Ionicons} from '@expo/vector-icons';//iconos
+
+export default function TabLayout() {
+  return(
+    <Tabs
+        screenOptions={{
+          headerShown:false,
+          tabBarActiveTintColor:"#441cf8",
+          tabBarInactiveTintColor:"#fe064c",
+          tabBarStyle:{
+            height:70,
+            paddingTop:5,
+            paddingBottom:10,
+          }, 
+          
+        }}
+    >
+      <Tabs.Screen
+          name="index"
+          options={{
+            title:"Inicio",
+            tabBarIcon:({color,size})=>(
+              <Ionicons 
+                name="fast-food-outline"
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+      />
+      <Tabs.Screen
+          name="explore"
+          options={{
+            title:"Productos",
+            tabBarIcon:({color,size})=>(
+              <Ionicons 
+                name="star-outline"
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+      />
+      <Tabs.Screen
+          name="perfil"
+          options={{
+            title:"Perfil",
+            tabBarIcon:({color,size})=>(
+              <Ionicons 
+                name="print-outline"
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+      />
+      <Tabs.Screen
+          name="ajustes"
+          options={{
+            title:"Ajustes",
+            tabBarIcon:({color,size})=>(
+              <Ionicons 
+                name="construct-outline"
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+      />
+
+    </Tabs>
+  )
+  
+}
