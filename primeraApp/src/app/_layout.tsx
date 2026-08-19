@@ -68,6 +68,19 @@ export default function TabLayout() {
             ),
           }}
       />
+      <Tabs.Screen
+          name="notificaciones"
+          options={{
+            title:"Notificaciones",
+            tabBarIcon:({color,size})=>(
+              <Ionicons 
+                name="american-football-outline"
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+      />
 
     </Tabs>
   )
