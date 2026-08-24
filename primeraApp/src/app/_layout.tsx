@@ -6,7 +6,7 @@ export default function TabLayout() {
     <Tabs
         screenOptions={{
           headerShown:false,
-          tabBarActiveTintColor:"#441cf8",
+          tabBarActiveTintColor:"#1cf8bd",
           tabBarInactiveTintColor:"#fe064c",
           tabBarStyle:{
             height:70,
@@ -48,7 +48,7 @@ export default function TabLayout() {
             title:"Perfil",
             tabBarIcon:({color,size})=>(
               <Ionicons 
-                name="print-outline"
+                name="alarm-outline"
                 size={size}
                 color={color}
               />
