@@ -1,88 +1,110 @@
 import {Tabs} from 'expo-router'; //Enrutamiento dinamico
 import {Ionicons} from '@expo/vector-icons';//iconos
 
+//IMPORTACION DEL DRAWER - MENU LATERAL
+import {Drawer} from 'expo-router/drawer';
+import {Appbar, PaperProvider} from 'react-native-paper';
+
+
+
 export default function TabLayout() {
   return(
-    <Tabs
-        screenOptions={{
-          headerShown:false,
-          tabBarActiveTintColor:"#1cf8bd",
-          tabBarInactiveTintColor:"#fe064c",
-          tabBarStyle:{
-            height:70,
-            paddingTop:5,
-            paddingBottom:10,
-          }, 
-          
-        }}
-    >
-      <Tabs.Screen
+
+    <>
+    <PaperProvider>
+      <Drawer
+          screenOptions={{
+            header:({
+              navigation,route,options
+            })=>(
+              <Appbar.Header>
+                <Appbar.Action
+                  icon="menu"
+                  onPress={()=>navigation.toggleDrawer()}
+                />
+                <Appbar.Content
+                    title={options.title ||route.name}
+                />
+              </Appbar.Header>
+            ),
+          }}
+      >
+        <Drawer.Screen
           name="index"
           options={{
             title:"Inicio",
-            tabBarIcon:({color,size})=>(
-              <Ionicons 
-                name="fast-food-outline"
-                size={size}
+            drawerIcon:({color,size})=>(
+              <Ionicons
+                name="home"
                 color={color}
-              />
-            ),
-          }}
-      />
-      <Tabs.Screen
-          name="explore"
-          options={{
-            title:"Productos",
-            tabBarIcon:({color,size})=>(
-              <Ionicons 
-                name="star-outline"
                 size={size}
-                color={color}
               />
-            ),
+            )
           }}
-      />
-      <Tabs.Screen
-          name="perfil"
-          options={{
-            title:"Perfil",
-            tabBarIcon:({color,size})=>(
-              <Ionicons 
-                name="alarm-outline"
-                size={size}
-                color={color}
-              />
-            ),
-          }}
-      />
-      <Tabs.Screen
+        />
+        <Drawer.Screen
           name="ajustes"
           options={{
             title:"Ajustes",
-            tabBarIcon:({color,size})=>(
-              <Ionicons 
-                name="construct-outline"
-                size={size}
+            drawerIcon:({color,size})=>(
+              <Ionicons
+                name="settings"
                 color={color}
+                size={size}
               />
-            ),
+            )
           }}
-      />
-      <Tabs.Screen
+        
+        />
+        <Drawer.Screen
+          name="explore"
+          options={{
+            title:"Productos",
+            drawerIcon:({color,size})=>(
+              <Ionicons
+                name="storefront"
+                color={color}
+                size={size}
+              />
+            )
+          }}
+        
+        />
+        <Drawer.Screen
+          name="perfil"
+          options={{
+            title:"Perfil",
+            drawerIcon:({color,size})=>(
+              <Ionicons
+                name="person"
+                color={color}
+                size={size}
+              />
+            )
+          }}
+        
+        />
+        <Drawer.Screen
           name="notificaciones"
           options={{
             title:"Notificaciones",
-            tabBarIcon:({color,size})=>(
-              <Ionicons 
-                name="american-football-outline"
-                size={size}
+            drawerIcon:({color,size})=>(
+              <Ionicons
+                name="notifications"
                 color={color}
+                size={size}
               />
-            ),
+            )
           }}
-      />
+        
+        />
+      </Drawer>
+    </PaperProvider>
 
-    </Tabs>
+
+
+    
+    </>
   )
   
 }
