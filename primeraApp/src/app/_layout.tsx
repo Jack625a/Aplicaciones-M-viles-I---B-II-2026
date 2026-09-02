@@ -36,7 +36,7 @@ export default function TabLayout() {
             drawerIcon:({color,size})=>(
               <Ionicons
                 name="home"
-                color={color}
+                color="red"
                 size={size}
               />
             )
