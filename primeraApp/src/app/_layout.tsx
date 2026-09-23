@@ -98,7 +98,22 @@ export default function TabLayout() {
           }}
         
         />
+        <Drawer.Screen
+          name="login"
+          options={{
+            title:"Iniciar Sesion",
+            drawerIcon:({color,size})=>(
+              <Ionicons
+                name="notifications"
+                color={color}
+                size={size}
+              />
+            )
+          }}
+        
+        />
       </Drawer>
+      
     </PaperProvider>
 
 

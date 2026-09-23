@@ -115,6 +115,7 @@ export default function Ajustes(){
               <Card.Content>
                 <Text style={styles.texto}>{item.nombre} </Text>
                 <Text>{item.precio} Bs </Text>
+                <Text>Descripcion: {item.descripcion} </Text>
               </Card.Content>
               <Card.Actions>
                 <Button 
