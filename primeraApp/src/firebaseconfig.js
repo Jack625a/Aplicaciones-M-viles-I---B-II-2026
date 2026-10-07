@@ -5,7 +5,7 @@ import {getAuth} from "firebase/auth"; //importa la dependencia de la autentific
 
 
 const firebaseConfig = {
- 
+   
 };
 
 // Initialize Firebase
