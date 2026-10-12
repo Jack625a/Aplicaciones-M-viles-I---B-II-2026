@@ -13,6 +13,7 @@ export default function Index(){
     Alert.alert("Ubicacion",`Latitud: ${ubicacion.coords.latitude} - Longitug: ${ubicacion.coords.longitude}`)
     console.log("Latitud: ",ubicacion.coords.latitude)
     console.log("Longitud: ",ubicacion.coords.longitude)
+    
   }
  
 return(
