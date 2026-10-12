@@ -19,7 +19,7 @@ export default function Multimedia() {
   // Función para seleccionar una imagen
   const seleccionarImagen = async () => {
     const permisos =
-      await ImagePicker.requestMediaLibraryPermissionsAsync();
+      await ImagePicker.requestCameraPermissionsAsync();
 
     if (permisos.status !== "granted") {
       Alert.alert(
@@ -29,7 +29,7 @@ export default function Multimedia() {
       return;
     }
 
-    const resultado = await ImagePicker.launchImageLibraryAsync({
+    const resultado = await ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       quality: 1,
